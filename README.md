@@ -22,3 +22,8 @@
 4.1经济可行性分析 
 从本方案的收益来看，，有效地提高了教室占用的效率。
 2.2.2技术可行性分析 
+
+
+# 需求分析
+## 用例图
+![Alt text](https://github.com/wuzhongqi/KCSJ/raw/master/er图.png)
