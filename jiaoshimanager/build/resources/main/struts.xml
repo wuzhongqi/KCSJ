@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="conststruts.devMode" value="true" />
+	<constant name="struts.multipart.maxSize" value="10485760" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	 <constant name="struts.configuration.xml.reload" value="true" />
+    
+	
+	
+	
+	
+	
+	<!-- Struts2的所有Action都需位于package下 -->
+	<package name="lee" extends="struts-default,json-default" namespace="/">
+<!--  	<action name="message_*" class="action.SendMessageAction" method="{1}">
+	  	    
+	
+		  	<result type="stream" name="{1}">
+			
+				<param name="contentType">text/html</param>
+		
+				<param name="inputName">result</param>
+				
+			</result>
+	</action>
+-->	
+	<!-- 注册登录 -->
+	<action name="user_*" class="action.UserAction" method="{1}">
+ 		<result name="exit">/WEB-INF/content/login.jsp</result>
+ 		<result name="login">/WEB-INF/content/index.jsp</result> 	
+		<result name="error">/WEB-INF/content/login.jsp</result>
+		<result name="success">/WEB-INF/content/register.jsp</result>
+	</action>
+		<!-- 集体使用申请 -->
+	<action name="apply_*" class="action.ApplyAction" method="{1}">	
+		<result name="error">/WEB-INF/content/shenqing.jsp</result>
+		<result name="success">/WEB-INF/content/shenqing.jsp</result>
+	</action>
+
+		<action name="*">
+			<result>/WEB-INF/content/{1}.jsp</result>
+		</action>
+	</package>
+</struts>
